@@ -16,7 +16,7 @@ import java.util.Random;
 
 public class CoinMan extends ApplicationAdapter {
 	SpriteBatch batch;
-	Texture background,background1,background2,background3,background4,background5;
+	Texture background,background1,background2,background3,background4,background5,background10,background9,background81,background82,background71,background72,background61,background62,background51,background52,background41,background42,background31,background32;
 	Texture[] man;
 	Texture dizzy;
 	int manState=0;
@@ -47,6 +47,11 @@ public class CoinMan extends ApplicationAdapter {
 	int x1=0,y1=0,a1=0,b1=0;
 	int x3=0,y3=0,a3=0,b3=0;
 	int x2=0,y2=0,a2=0,b2=0;
+	int x4=0,y4=0,a4=0,b4=0;
+	int x5=0,y5=0,a5=0,b5=0;
+	int x6=0,y6=0,a6=0,b6=0;
+	int x7=0,y7=0,a7=0,b7=0;
+	int x8=0,y8=0,a8=0,b8=0;
 
 
 	private Rectangle textureRegionBounds1;
@@ -56,14 +61,40 @@ public class CoinMan extends ApplicationAdapter {
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
-		background=new Texture("morningaboveV1.jpg");
-		background1=new Texture("morningaboveV2.jpg");
+		background=new Texture("11_background.png");
 
-		background2=new Texture("morningmiddleV1.jpg");
 		background3=new Texture("morningmiddleV2.jpg");
 
 		background4=new Texture("morninglowV1.jpg");
 		background5=new Texture("morninglowV1.jpg");
+
+
+		background10=new Texture("10_distant_clouds.png");
+		background9=new Texture("09_distant_clouds1.png");
+
+		background81=new Texture("08_clouds1.png");
+		background82=new Texture("08_clouds2.png");
+
+
+		background71=new Texture("07_huge_clouds1.png");
+		background72=new Texture("07_huge_clouds2.png");
+
+		background61=new Texture("06_hill21.png");
+		background62=new Texture("06_hill22.png");
+
+		background51=new Texture("05_hill11.png");
+		background52=new Texture("05_hill12.png");
+
+		background41=new Texture("04_bushes1.png");
+		background42=new Texture("04_bushes2.png");
+
+		background31=new Texture("03_distant_trees1.png");
+		background32=new Texture("03_distant_trees2.png");
+
+		background2=new Texture("02_treesandbushes.png");
+
+		background1=new Texture("01_ground.png");
+
 
 
 
@@ -80,9 +111,16 @@ public class CoinMan extends ApplicationAdapter {
 		font.setColor(Color.WHITE);
 		font.getData().setScale(10);
 		dizzy=new Texture("dizzy-1.png");
-		a3=Gdx.graphics.getWidth();
+
 		a1=Gdx.graphics.getWidth();
 		a2=Gdx.graphics.getWidth();
+		a3=Gdx.graphics.getWidth();
+		a4=Gdx.graphics.getWidth();
+		a5=Gdx.graphics.getWidth();
+		a6=Gdx.graphics.getWidth();
+		a7=Gdx.graphics.getWidth();
+		a8=Gdx.graphics.getWidth();
+
 
 
 	}
@@ -105,16 +143,56 @@ public class CoinMan extends ApplicationAdapter {
 	@Override
 	public void render () {
 		batch.begin();
-		batch.draw(background,x1,Gdx.graphics.getHeight()-background.getHeight(),Gdx.graphics.getWidth(),background.getHeight());
-		batch.draw(background1,a1,Gdx.graphics.getHeight()-background.getHeight(),Gdx.graphics.getWidth(),background.getHeight());
 
-		batch.draw(background2,x2,background4.getHeight(),Gdx.graphics.getWidth(),Gdx.graphics.getHeight()-background.getHeight()-background4.getHeight());
-		batch.draw(background3,a2,background4.getHeight(),Gdx.graphics.getWidth(),Gdx.graphics.getHeight()-background.getHeight()-background4.getHeight());
+		batch.draw(background,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+
+		batch.draw(background10,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+
+		batch.draw(background9,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+
+		batch.draw(background81,x1,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+		batch.draw(background82,a1,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+
+		batch.draw(background71,x2,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+		batch.draw(background72,a2,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+
+		batch.draw(background61,x3,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+		batch.draw(background62,a3,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+
+		batch.draw(background51,x4,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+		batch.draw(background52,a4,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+
+		batch.draw(background41,x5,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+		batch.draw(background42,a5,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+
+		batch.draw(background31,x6,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+		batch.draw(background32,a6,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+
+		batch.draw(background2,x7,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+		batch.draw(background2,a7,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+
+		batch.draw(background1,x8,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+		batch.draw(background1,a8,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
 
 
-		batch.draw(background4,x3,0,Gdx.graphics.getWidth(),background4.getHeight());
-		batch.draw(background5,a3,0,Gdx.graphics.getWidth(),background4.getHeight());
 
+
+
+		//		batch.draw(background1,x1,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+//		batch.draw(background1,a1,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+//
+//		batch.draw(background2,x2,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+//		batch.draw(background2,a2,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+
+		//		batch.draw(background1,a1,Gdx.graphics.getHeight()-background.getHeight(),Gdx.graphics.getWidth(),background.getHeight());
+//
+//		batch.draw(background2,x2,background4.getHeight(),Gdx.graphics.getWidth(),Gdx.graphics.getHeight()-background.getHeight()-background4.getHeight());
+//		batch.draw(background3,a2,background4.getHeight(),Gdx.graphics.getWidth(),Gdx.graphics.getHeight()-background.getHeight()-background4.getHeight());
+//
+//
+//		batch.draw(background4,x3,0,Gdx.graphics.getWidth(),background4.getHeight());
+//		batch.draw(background5,a3,0,Gdx.graphics.getWidth(),background4.getHeight());
+//
 
 
 
@@ -124,8 +202,8 @@ public class CoinMan extends ApplicationAdapter {
 
 		if(gameState==1)
 		{
-			x1-=2;
-			a1-=2;
+			x1-=1;
+			a1-=1;
 
 			if(a1==0)
 			{
@@ -137,8 +215,8 @@ public class CoinMan extends ApplicationAdapter {
 				a1=Gdx.graphics.getWidth();
 			}
 
-			x2-=8;
-			a2-=8;
+			x2-=2;
+			a2-=2;
 
 			if(a2==0)
 			{
@@ -150,8 +228,8 @@ public class CoinMan extends ApplicationAdapter {
 				a2=Gdx.graphics.getWidth();
 			}
 
-			x3-=15;
-			a3-=15;
+			x3-=3;
+			a3-=3;
 
 			if(a3==0)
 			{
@@ -161,6 +239,76 @@ public class CoinMan extends ApplicationAdapter {
 			if(x3==0)
 			{
 				a3=Gdx.graphics.getWidth();
+			}
+
+			x4-=3;
+			a4-=3;
+
+			if(a4==0)
+			{
+				x4=Gdx.graphics.getWidth();
+
+			}
+			if(x4==0)
+			{
+				a4=Gdx.graphics.getWidth();
+			}
+
+
+			x5-=4;
+			a5-=4;
+
+			if(a5==0)
+			{
+				x5=Gdx.graphics.getWidth();
+
+			}
+			if(x5==0)
+			{
+				a5=Gdx.graphics.getWidth();
+			}
+
+
+			x6-=5;
+			a6-=5;
+
+			if(a6==0)
+			{
+				x6=Gdx.graphics.getWidth();
+
+			}
+			if(x6==0)
+			{
+				a6=Gdx.graphics.getWidth();
+			}
+
+
+			x7-=6;
+			a7-=6;
+
+			if(a7==0)
+			{
+				x7=Gdx.graphics.getWidth();
+
+			}
+			if(x7==0)
+			{
+				a7=Gdx.graphics.getWidth();
+			}
+
+
+
+			x8-=10;
+			a8-=10;
+
+			if(a8==0)
+			{
+				x8=Gdx.graphics.getWidth();
+
+			}
+			if(x8==0)
+			{
+				a8=Gdx.graphics.getWidth();
 			}
 
 
