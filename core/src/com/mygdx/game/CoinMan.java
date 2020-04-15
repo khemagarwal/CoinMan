@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Intersector;
 import com.badlogic.gdx.math.Rectangle;
 
@@ -15,7 +16,7 @@ import java.util.Random;
 
 public class CoinMan extends ApplicationAdapter {
 	SpriteBatch batch;
-	Texture background;
+	Texture background,background1;
 	Texture[] man;
 	Texture dizzy;
 	int manState=0;
@@ -43,11 +44,20 @@ public class CoinMan extends ApplicationAdapter {
 
 	int score=0;
 
+	int x=0,y=0,a=0,b=-10;
+
+
+	private Rectangle textureRegionBounds1;
+	private Rectangle textureRegionBounds2;
+	private int speed = 100;
 
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
-		background=new Texture("bg.png");
+		background=new Texture("bg4.png");
+		background1=new Texture("bg5.png");
+
+
 		man=new Texture[4];
 		man[0]=new Texture("frame-1.png");
 		man[1]=new Texture("frame-2.png");
@@ -61,6 +71,7 @@ public class CoinMan extends ApplicationAdapter {
 		font.setColor(Color.WHITE);
 		font.getData().setScale(10);
 		dizzy=new Texture("dizzy-1.png");
+		a=Gdx.graphics.getWidth();
 
 
 	}
@@ -83,11 +94,26 @@ public class CoinMan extends ApplicationAdapter {
 	@Override
 	public void render () {
 		batch.begin();
-		batch.draw(background,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+		batch.draw(background,x,y,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+		batch.draw(background1,a,b,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
 
 		if(gameState==1)
 		{
-			
+
+
+			x-=10;
+			a-=10;
+			if(a==0)
+			{
+				x=Gdx.graphics.getWidth();
+
+			}
+			if(x==0)
+			{
+				a=Gdx.graphics.getWidth();
+			}
+
+
 			//game is live
 			//BOMBS
 			if(bombCount<200){
