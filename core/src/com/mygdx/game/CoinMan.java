@@ -137,7 +137,6 @@ public class CoinMan extends ApplicationAdapter {
 		float height=random.nextFloat() * Gdx.graphics.getHeight();
 		bombYs.add((int)height);
 		bombXs.add(Gdx.graphics.getWidth());
-
 	}
 
 	@Override
