@@ -367,11 +367,6 @@ public class CoinMan extends ApplicationAdapter {
 			//Character movement
 			if(Gdx.input.justTouched()){
 				velocity=-15;
-				int i = 1;
-				while (i != 1000000){
-					manState = 5;
-					i++;
-				}
 
 			}
 			if(pause < 3)
