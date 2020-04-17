@@ -19,6 +19,7 @@ public class CoinMan extends ApplicationAdapter {
 	Texture background,background1,background2,background3,background4,background5,background10,background9,background81,background82,background71,background72,background61,background62,background51,background52,background41,background42,background31,background32;
 	Texture[] man;
 	Texture dizzy;
+	Texture[] jump;
 	int manState=0;
 	int pause=0;
 	float gravity = 0.4f;
@@ -98,11 +99,19 @@ public class CoinMan extends ApplicationAdapter {
 
 
 
-		man=new Texture[4];
+		man=new Texture[7];
 		man[0]=new Texture("frame-1.png");
 		man[1]=new Texture("frame-2.png");
 		man[2]=new Texture("frame-3.png");
 		man[3]=new Texture("frame-4.png");
+		man[4]=new Texture("frame-5.png");
+		man[5] = new Texture("jump-up.png");
+		man[6] = new Texture("jump-fall.png");
+//		man[5]=new Texture("frame-6.png");
+//		man[6]=new Texture("frame-7.png");
+//		man[7]=new Texture("frame-8.png");
+//		man[8]=new Texture("frame-9.png");
+//		man[9]=new Texture("frame-10.png");
 		manY=Gdx.graphics.getHeight()/2;
 		coin=new Texture("coin.png");
 		bomb=new Texture("bomb.png");
@@ -111,6 +120,9 @@ public class CoinMan extends ApplicationAdapter {
 		font.setColor(Color.WHITE);
 		font.getData().setScale(10);
 		dizzy=new Texture("dizzy-1.png");
+		jump = new Texture[2];
+		jump[0] = new Texture("jump-up.png");
+		jump[1] = new Texture("jump-fall.png");
 
 		a1=Gdx.graphics.getWidth();
 		a2=Gdx.graphics.getWidth();
@@ -352,17 +364,24 @@ public class CoinMan extends ApplicationAdapter {
 			}
 
 
+			//Character movement
 			if(Gdx.input.justTouched()){
 				velocity=-15;
+				int i = 1;
+				while (i != 1000000){
+					manState = 5;
+					i++;
+				}
+
 			}
-			if(pause < 4)
+			if(pause < 3)
 			{
 				pause++;
 			}
 			else
 			{
 				pause=0;
-				if(manState < 3)
+				if(manState < 4)
 				{
 					manState++;
 				}
