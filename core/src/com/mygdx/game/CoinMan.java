@@ -3,12 +3,15 @@ package com.mygdx.game;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Intersector;
 import com.badlogic.gdx.math.Rectangle;
+import com.badlogic.gdx.scenes.scene2d.ui.Skin;
+import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 
 
 import java.util.ArrayList;
@@ -58,8 +61,11 @@ public class CoinMan extends ApplicationAdapter {
 	private Rectangle textureRegionBounds2;
 	private int speed = 100;
 
+
 	@Override
 	public void create () {
+
+
 		batch = new SpriteBatch();
 		background=new Texture("11_background.png");
 
@@ -120,6 +126,8 @@ public class CoinMan extends ApplicationAdapter {
 		a6=Gdx.graphics.getWidth();
 		a7=Gdx.graphics.getWidth();
 		a8=Gdx.graphics.getWidth();
+
+
 
 
 
@@ -460,3 +468,5 @@ public class CoinMan extends ApplicationAdapter {
 
 	}
 }
+
+
