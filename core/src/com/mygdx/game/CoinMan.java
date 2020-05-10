@@ -13,7 +13,7 @@ import com.badlogic.gdx.math.Rectangle;
 
 import java.util.ArrayList;
 import java.util.Random;
-
+//hellow
 public class CoinMan extends ApplicationAdapter {
 	SpriteBatch batch;
 	Texture background,background1,background2,background3,background4,background5,background10,background9,background81,background82,background71,background72,background61,background62,background51,background52,background41,background42,background31,background32;
@@ -343,8 +343,6 @@ public class CoinMan extends ApplicationAdapter {
 			}
 
 
-
-
 			//COINS
 			if(coinCount<100){
 				coinCount++;
@@ -362,7 +360,6 @@ public class CoinMan extends ApplicationAdapter {
 				coinXs.set(i,coinXs.get(i)-8);
 				coinRectangles.add(new Rectangle(coinXs.get(i),coinYs.get(i),coin.getWidth(),coin.getHeight()));
 			}
-
 
 			//Character movement
 			if(Gdx.input.justTouched()){
