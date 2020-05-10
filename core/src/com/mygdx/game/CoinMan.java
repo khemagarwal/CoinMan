@@ -13,7 +13,7 @@ import com.badlogic.gdx.math.Rectangle;
 
 import java.util.ArrayList;
 import java.util.Random;
-//hellow
+//hello abc
 public class CoinMan extends ApplicationAdapter {
 	SpriteBatch batch;
 	Texture background,background1,background2,background3,background4,background5,background10,background9,background81,background82,background71,background72,background61,background62,background51,background52,background41,background42,background31,background32;
